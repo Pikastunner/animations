@@ -1,0 +1,107 @@
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+    <div class="opening" id="opening">
+        <div class="text" style="font-size: 8em;">I create css animations</div>
+        <div class="text" style="font-size: 3em;"> Scroll to see my list of animations</div>
+    </div>
+    <div id="sidebar_left" class="sidebar"></div>
+    <div class="animation_list">
+        <div class="text" style="color: white; font-size: 3em; top: 5vh;">Scroll animation </div>
+        <br>
+        <a target="_blank" class="link text" href="https://pikastunner.github.io/strike" style="font-size: 2.5em; text-decoration: none;top: 5vh;">Strike</a>
+    </div>
+    <div id="sidebar_right" class="sidebar"></div>
+
+    <!---    <div class="animation_list">
+        <div class="text" style="color: white; font-size: 3em; top: 5vh;">Scroll animation </div>
+        <br>
+        <a target="_blank" class="link text" href="https://pikastunner.github.io/strike" style="font-size: 2.5em; text-decoration: none;top: 5vh;">Strike</a>
+    </div>-->
+</html>
+<style>
+    .sidebar {
+        width: 20vw;
+        height: 100vh;
+        float: left;
+        background-color: aquamarine;
+    }
+    html {
+        height: 100vh;
+        width: 100vw;
+    }
+    .opening {
+        text-align: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: grey;
+        background-blend-mode: multiply;
+        height: 100vh;
+        width: 100vw;
+        color: white;
+        scroll-snap-align: center;
+    }
+
+    .link:hover {
+        color: aquamarine;
+    }
+
+
+    .text {
+        position: relative;
+        top: 40vh;
+        font-family: 'Actor';
+    }
+
+    .animation_list {
+        background-color: #18191A;
+        height: 100vh;
+        width: 60vw;
+        margin: 0;
+        scroll-snap-align: center;
+        text-align: center;
+        font-family: 'Actor';
+        float: left;
+    }
+
+    body {
+        margin: 0px;
+    }
+
+    html {
+        scroll-snap-type: y mandatory;
+    }
+    * {
+        scrollbar-width: none;  /* Firefox */
+        overflow: none;
+    }
+    *::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+
+</style>
+<script>
+    var index = 0;
+    function background_transition() {
+        var image_array = [
+            "url('paranoia_agent.jpg')",
+            "url('parasyte.jpg')",
+            "url('texhnolyze.jpg')",
+            "url('side_image.jpg')",
+            "url('side_image2.jpg')",
+            "url('side_image3.jpg')",
+            "url('lainsroom.jpg')"
+            //"url('')",
+            //"url('')",
+
+        ];
+        //var index = Math.floor(Math.random() * image_array.length);
+        if (index == image_array.length) {
+            index = 0;
+        }
+        document.getElementById('opening').style.backgroundImage = image_array[index];
+        index += 1;
+    }
+    setInterval(background_transition, 100);
+</script>
